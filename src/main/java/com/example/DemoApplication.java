@@ -13,9 +13,8 @@ import java.io.InputStreamReader;
 public class DemoApplication {
   
   public String runpy() {
-        try {
-            
-	           // run the Unix "ls" command
+        try {    
+	     // run the Unix "ls" command
             // using the Runtime exec method:
             Process p = Runtime.getRuntime().exec("ls");
             
@@ -29,15 +28,12 @@ public class DemoApplication {
              String str = "";
             while ((s = stdInput.readLine()) != null) {
                 str += s;
-            }
-            
+            }     
             return str
         }
         catch (IOException e) {
             // do nothing
         }
-    }
-}
   }
 
   @RequestMapping("/")
