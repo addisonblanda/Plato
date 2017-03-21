@@ -11,11 +11,11 @@ import java.io.*;
 @SpringBootApplication
 public class DemoApplication {
   
-  public String runpy() {
+  public String runpy(String id) {
         try {
 	     // run the Unix "ls" command
             // using the Runtime exec method:
-            Process p = Runtime.getRuntime().exec("python hello.py");
+            Process p = Runtime.getRuntime().exec("python hello.py "+id);
             
             BufferedReader stdInput = new BufferedReader(new 
                  InputStreamReader(p.getInputStream()));
@@ -50,7 +50,7 @@ public class DemoApplication {
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public @ResponseBody String get(@PathVariable("id") String id) {
     String str = "Hello there " + id + "!";
-    return str + runpy();
+    return str + runpy(id);
   }
 
   public static void main(String[] args) {
