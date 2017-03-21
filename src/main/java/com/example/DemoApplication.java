@@ -15,7 +15,7 @@ public class DemoApplication {
         try {
 	     // run the Unix "ls" command
             // using the Runtime exec method:
-            Process p = Runtime.getRuntime().exec("ls");
+            Process p = Runtime.getRuntime().exec("python hello.py");
             
             BufferedReader stdInput = new BufferedReader(new 
                  InputStreamReader(p.getInputStream()));
