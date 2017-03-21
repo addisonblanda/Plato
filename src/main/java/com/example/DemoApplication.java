@@ -13,28 +13,31 @@ import java.io.InputStreamReader;
 public class DemoApplication {
   
   public String runpy() {
-    Runtime rt = Runtime.getRuntime();
-    String[] commands = {"ls"};
-    Process proc = rt.exec(commands);
+        try {
+            
+	           // run the Unix "ls" command
+            // using the Runtime exec method:
+            Process p = Runtime.getRuntime().exec("ls");
+            
+            BufferedReader stdInput = new BufferedReader(new 
+                 InputStreamReader(p.getInputStream()));
 
-    BufferedReader stdInput = new BufferedReader(new 
-        InputStreamReader(proc.getInputStream()));
+            BufferedReader stdError = new BufferedReader(new 
+                 InputStreamReader(p.getErrorStream()));
 
-    BufferedReader stdError = new BufferedReader(new 
-        InputStreamReader(proc.getErrorStream()));
-
-    // read the output from the command
-    String s = null;
-    while ((s = stdInput.readLine()) != null) {
-       System.out.println(s);
+            // read the output from the command
+             String str = "";
+            while ((s = stdInput.readLine()) != null) {
+                str += s;
+            }
+            
+            return str
+        }
+        catch (IOException e) {
+            // do nothing
+        }
     }
-
-    // read any errors from the attempted command
-    String str = "";
-    while ((s = stdError.readLine()) != null) {
-        str += s;
-    } 
-    return str;
+}
   }
 
   @RequestMapping("/")
