@@ -21,7 +21,7 @@ public class DemoApplication {
     return "Hello from Heroku!";
   }
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public @ResponseBody get(@PathVariable("id") String id) {
+  public @ResponseBody String get(@PathVariable("id") String id) {
     String str = "Hello there." + id;
     return str;
   }
