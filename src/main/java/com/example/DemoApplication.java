@@ -32,7 +32,7 @@ public class DemoApplication {
             return str;
         }
         catch (IOException e) {
-            // do nothing
+            return "";
         }
   }
 
