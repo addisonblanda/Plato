@@ -20,6 +20,11 @@ public class DemoApplication {
   String hello() {
     return "Hello from Heroku!";
   }
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public ResponseEntity<String> get(@PathVariable("id") String id) {
+    String str = "Hello there." + id;
+    return new ResponseEntity<String>(str, HttpStatus.OK);
+  }
 
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
