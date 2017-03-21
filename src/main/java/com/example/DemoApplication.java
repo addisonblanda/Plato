@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 public class DemoApplication {
   
   public String runpy() {
-        try {    
+        try {
 	     // run the Unix "ls" command
             // using the Runtime exec method:
             Process p = Runtime.getRuntime().exec("ls");
@@ -25,7 +25,8 @@ public class DemoApplication {
                  InputStreamReader(p.getErrorStream()));
 
             // read the output from the command
-             String str = "";
+            String s = "";
+	    String str = "";
             while ((s = stdInput.readLine()) != null) {
                 str += s;
             }     
