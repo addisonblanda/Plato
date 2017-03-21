@@ -29,7 +29,7 @@ public class DemoApplication {
             while ((s = stdInput.readLine()) != null) {
                 str += s;
             }     
-            return str
+            return str;
         }
         catch (IOException e) {
             // do nothing
