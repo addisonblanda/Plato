@@ -23,7 +23,7 @@ public class DemoApplication {
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public ResponseEntity<String> get(@PathVariable("id") String id) {
     String str = "Hello there." + id;
-    return new ResponseEntity<String>(str, HttpStatus.OK);
+    return new ResponseEntity<String>(str);
   }
 
   public static void main(String[] args) {
