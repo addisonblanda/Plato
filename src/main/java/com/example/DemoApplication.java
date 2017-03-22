@@ -163,12 +163,12 @@ public class DemoApplication {
   }
   @RequestMapping(value = "/{datum}", method = RequestMethod.GET)
   public @ResponseBody Datum get(@PathVariable("datum") Datum datum) {
-        datumToFile(datum);
-        rawToFile(datum.raw);
-        runpy();
-        Datum response = fileToDatum(datum.raw);
-	deleteDirectory(new File("data"));
-	return response;
+        //datumToFile(datum);
+        //rawToFile(datum.raw);
+        //runpy();
+        //Datum response = fileToDatum(datum.raw);
+	//deleteDirectory(new File("data"));
+	return datum.raw;
   }
 
   public static void main(String[] args) {
