@@ -163,7 +163,7 @@ public class DemoApplication {
   String hello() {
     return "Hello from Heroku!";
   }
-  @RequestMapping(value = "/{datum}", method = RequestMethod.GET)
+  @RequestMapping(value = "/datum", method = RequestMethod.GET)
   public ResponseEntity<Datum> get(@RequestBody Datum datum) {
         //datumToFile(datum);
         //rawToFile(datum.raw);
