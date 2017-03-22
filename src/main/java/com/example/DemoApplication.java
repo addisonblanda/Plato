@@ -168,7 +168,7 @@ public class DemoApplication {
         //runpy();
         //Datum response = fileToDatum(datum.raw);
 	//deleteDirectory(new File("data"));
-	return datum.raw;
+	return datum;
   }
 
   public static void main(String[] args) {
