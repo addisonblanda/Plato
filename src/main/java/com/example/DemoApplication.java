@@ -169,7 +169,7 @@ public class DemoApplication {
         //runpy();
         //Datum response = fileToDatum(datum.raw);
 	//deleteDirectory(new File("data"));
-	return datum;
+	new ResponseEntity<Datum>(datum, HttpStatus.OK);
   }
 
   public static void main(String[] args) {
