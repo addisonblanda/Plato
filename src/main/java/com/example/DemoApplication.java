@@ -162,7 +162,7 @@ public class DemoApplication {
     return "Hello from Heroku!";
   }
   @RequestMapping(value = "/{datum}", method = RequestMethod.GET)
-  public @ResponseBody Datum get(@PathVariable("datum") Datum datum) {
+  public ResponseEntity<Datum> get(@PathVariable("datum") Datum datum) {
         //datumToFile(datum);
         //rawToFile(datum.raw);
         //runpy();
