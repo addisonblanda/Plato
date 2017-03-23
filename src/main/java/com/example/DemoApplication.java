@@ -40,10 +40,10 @@ public class DemoApplication {
   public String get(@PathVariable("id") String id) {
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
-	  runpy();
-	  String response = fc.fileToCsv(raw);
-	  fc.deleteDirectory(new File("data"));
-	  return response;
+	  //runpy();
+	  //String response = fc.fileToCsv(raw);
+	  //fc.deleteDirectory(new File("data"));
+	  return "ok";
   }
 
   public static void main(String[] args) {
