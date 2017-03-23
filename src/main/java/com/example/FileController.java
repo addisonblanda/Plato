@@ -20,13 +20,21 @@ public class FileController {
         FileWriter fw = null;
         String name, data;
         int index;
+	    
+	    //testing
+	    StringBuilder sb = new StringBuilder();
 
         try{
             for(int i = 1; i < arrayList.size(); i++) {
                 index = arrayList.get(i).indexOf('~');
-                if(index != arrayList.get(i).length()-1 || index != -1) {
+                if(index != arrayList.get(i).length()-1) {
                     name = arrayList.get(i).substring(0, index);
                     data = arrayList.get(i).substring(index+1, arrayList.get(i).length()-1);
+		    sb.append(name + data);
+		}
+	    }
+		return sb.toString();
+		    /*
                     File f = new File(name);
                     f.getParentFile().mkdirs();
                     fw = new FileWriter(f);
@@ -59,6 +67,7 @@ public class FileController {
 
         }
         return "";
+	*/
     }
 
     public String fileToCsv(String raw) {
