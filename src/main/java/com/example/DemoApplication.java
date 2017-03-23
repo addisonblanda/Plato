@@ -12,14 +12,13 @@ import org.springframework.stereotype.*;
 @SpringBootApplication
 public class DemoApplication {
   
-  private static String runpy() {
+  private static void runpy() {
         try {
 	    // execute python
             Process p = Runtime.getRuntime().exec("python information.py");
             
         catch (IOException e) {
             e.printStackTrace();
-	    return "";
         }
   }
 
