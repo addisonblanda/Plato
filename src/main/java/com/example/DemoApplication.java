@@ -165,13 +165,13 @@ public class DemoApplication {
   }
   @RequestMapping(value = "/datum", method = RequestMethod.POST)
   @ResponseBody
-    public Datum get(@RequestBody Datum id) {
+    public String get(@RequestBody String id) {
         //datumToFile(datum);
         //rawToFile(datum.raw);
         //runpy();
         //Datum response = fileToDatum(datum.raw);
 	//deleteDirectory(new File("data"));
-	return id;
+	return id + " friend";
   }
 
   public static void main(String[] args) {
