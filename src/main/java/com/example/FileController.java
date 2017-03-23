@@ -24,7 +24,7 @@ public class FileController {
         try{
             for(int i = 1; i < arrayList.size(); i++) {
                 index = arrayList.get(i).indexOf('~');
-                if(index != arrayList.get(i).length()-1) {
+                if(index != arrayList.get(i).length()-1 || index != -1) {
                     name = arrayList.get(i).substring(0, index);
                     data = arrayList.get(i).substring(index+1, arrayList.get(i).length()-1);
                     File f = new File(name);
