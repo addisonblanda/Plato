@@ -176,9 +176,9 @@ public class DemoApplication {
   }
   */
 	
-  @RequestMapping(value = "/datum", method = RequestMethod.POST)
-  public ResponseEntity<Datum> get(@RequestBody Datum datum) {
-    return new ResponseEntity<Datum>(datum, HttpStatus.OK);
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public @ResponseBody String get(@PathVariable("id") String id) {
+	  return id + " ok!";
   }
 
   public static void main(String[] args) {
