@@ -24,7 +24,7 @@ public class FileController {
 	    //testing
 	    StringBuilder sb = new StringBuilder();
 
-        try{
+        //try{
             for(int i = 1; i < arrayList.size(); i++) {
                 index = arrayList.get(i).indexOf('~');
                 if(index != arrayList.get(i).length()-1) {
