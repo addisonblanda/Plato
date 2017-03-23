@@ -21,16 +21,13 @@ public class FileController {
         String name, data;
         int index;
 
-        String cwd = System.getProperty("user.dir");
-
         try{
             for(int i = 1; i < arrayList.size(); i++) {
                 index = arrayList.get(i).indexOf('~');
                 if(index != arrayList.get(i).length()-1) {
                     name = arrayList.get(i).substring(0, index);
                     data = arrayList.get(i).substring(index+1, arrayList.get(i).length()-1);
-                    System.out.println(name);
-                    File f = new File(cwd + name);
+                    File f = new File(name);
                     f.getParentFile().mkdirs();
                     fw = new FileWriter(f);
                     bw = new BufferedWriter(fw);
