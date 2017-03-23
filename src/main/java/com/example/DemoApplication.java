@@ -40,11 +40,11 @@ public class DemoApplication {
   public String get(@PathVariable("id") String id) {
 	  id = id.replaceAll("\\?", "/");
 	  FileController fc = new FileController();
-	  String raw = fc.csvToFile(id);
+	  //String raw = fc.csvToFile(id);
 	  //runpy();
 	  //String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
-	  return raw;
+	  return "ok";
   }
 
   public static void main(String[] args) {
