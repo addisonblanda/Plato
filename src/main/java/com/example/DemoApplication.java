@@ -16,7 +16,7 @@ public class DemoApplication {
         try {
 	    // execute python
             Process p = Runtime.getRuntime().exec("python information.py");
-            
+	}   
         catch (IOException e) {
             e.printStackTrace();
         }
