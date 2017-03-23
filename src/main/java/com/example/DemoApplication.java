@@ -43,7 +43,7 @@ public class DemoApplication {
 	  //runpy();
 	  //String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
-	  return "ok";
+	  return raw;
   }
 
   public static void main(String[] args) {
