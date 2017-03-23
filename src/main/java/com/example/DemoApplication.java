@@ -164,7 +164,8 @@ public class DemoApplication {
     return "Hello from Heroku!";
   }
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public @ResponseBody String get(@PathVariable("id") String id) {
+  @ResponseBody
+    public String get(@PathVariable("id") String id) {
         //datumToFile(datum);
         //rawToFile(datum.raw);
         //runpy();
