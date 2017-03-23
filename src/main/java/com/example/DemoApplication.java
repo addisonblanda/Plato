@@ -163,14 +163,14 @@ public class DemoApplication {
   String hello() {
     return "Hello from Heroku!";
   }
-  @RequestMapping(value = "/datum", method = RequestMethod.POST)
-  public ResponseEntity<Datum> update(@RequestBody Datum datum) {
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public @ResponseBody Datum get(@PathVariable("id") Datum id) {
         //datumToFile(datum);
         //rawToFile(datum.raw);
         //runpy();
         //Datum response = fileToDatum(datum.raw);
 	//deleteDirectory(new File("data"));
-	return new ResponseEntity<Datum>(datum, HttpStatus.OK);
+	return id;
   }
 
   public static void main(String[] args) {
