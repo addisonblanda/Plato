@@ -163,6 +163,7 @@ public class DemoApplication {
   String hello() {
     return "Hello from Heroku!";
   }
+	/*
   @RequestMapping(value = "/datum", method = RequestMethod.POST)
   @ResponseBody
     public String get(@RequestBody String id) {
@@ -172,6 +173,12 @@ public class DemoApplication {
         //Datum response = fileToDatum(datum.raw);
 	//deleteDirectory(new File("data"));
 	return id + " friend";
+  }
+  */
+	
+  @RequestMapping(value = "/datum", method = RequestMethod.POST)
+  public ResponseEntity<Datum> get(@RequestBody Datum datum) {
+    return new ResponseEntity<Datum>(datum, HttpStatus.OK);
   }
 
   public static void main(String[] args) {
