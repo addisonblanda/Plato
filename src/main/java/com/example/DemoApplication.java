@@ -37,7 +37,7 @@ public class DemoApplication {
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   @ResponseBody
-  public String get(@PathVariable("id") String[] id) {
+  public String get(@PathVariable("id") String id) {
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
 	  runpy();
