@@ -7,13 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.*;
 
-import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @SpringBootApplication
@@ -21,21 +14,9 @@ public class DemoApplication {
   
   private static String runpy() {
         try {
-	     // run the Unix "ls" command
-            // using the Runtime exec method:
+	    // execute python
             Process p = Runtime.getRuntime().exec("python information.py");
             
-            BufferedReader stdInput = new BufferedReader(new 
-                 InputStreamReader(p.getInputStream()));
-
-            // read the output from the command
-            String s;
-	    StringBuilder sb = new StringBuilder();
-            while ((s = stdInput.readLine()) != null) {
-                sb.append(s);
-            }     
-            return sb.toString();
-        }
         catch (IOException e) {
             e.printStackTrace();
 	    return "";
@@ -57,7 +38,12 @@ public class DemoApplication {
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   @ResponseBody
   public String get(@PathVariable("id") String[] id) {
-	  return id + " ok!";
+	  FileController fc = new FileController();
+	  String raw = fc.csvToFile(id);
+	  runpy();
+	  String response = fc.fileToCsv(raw);
+	  fc.deleteDirectory(new File("data"));
+	  return response;
   }
 
   public static void main(String[] args) {
