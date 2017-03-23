@@ -29,7 +29,7 @@ public class FileController {
                 index = arrayList.get(i).indexOf('~');
                 if(index != arrayList.get(i).length()-1) {
                     name = arrayList.get(i).substring(0, index);
-                    data = arrayList.get(i).substring(index+1, arrayList.get(i).length()-1);
+                    data = arrayList.get(i).substring(index+1, arrayList.get(i).length());
 		    sb.append(name + data);
 		}
 	    }
