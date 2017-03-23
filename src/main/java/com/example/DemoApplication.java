@@ -178,7 +178,7 @@ public class DemoApplication {
 	
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   @ResponseBody
-  public String get(@PathVariable("id") String id) {
+  public String get(@PathVariable("id") String[] id) {
 	  return id + " ok!";
   }
 
