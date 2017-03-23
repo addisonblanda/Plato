@@ -15,6 +15,10 @@ public class FileController {
         List<String> arrayList = Arrays.asList(csv.split(","));
 
         rawToFile(arrayList.get(0));
+	    
+	    //test case
+	    
+	return arrayList.get(1);
 
         BufferedWriter bw = null;
         FileWriter fw = null;
