@@ -16,12 +16,6 @@ public class FileController {
 
         rawToFile(arrayList.get(0));
 	    
-	    //test case
-	    
-	return arrayList.get(2);
-	    
-	    /*
-
         BufferedWriter bw = null;
         FileWriter fw = null;
         String name, data;
@@ -65,7 +59,6 @@ public class FileController {
 
         }
         return "";
-	*/
     }
 
     public String fileToCsv(String raw) {
