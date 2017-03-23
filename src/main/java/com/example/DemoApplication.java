@@ -38,14 +38,15 @@ public class DemoApplication {
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   @ResponseBody
   public String get(@PathVariable("id") String id) {
-	  id = id.replaceAll("%20", "");
-	  id = id.replaceAll("%3F", "");
+	  id = id.replaceAll("%20", " ");
+	  id = id.replaceAll("%3F", "/");
 	  FileController fc = new FileController();
-	  //String raw = fc.csvToFile(id);
+	  String raw = fc.csvToFile(id);
 	  //runpy();
 	  //String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
-	  return id;
+	  raw = raw.replaceAll(" ", "");
+	  return raw;
   }
 
   public static void main(String[] args) {
