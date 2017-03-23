@@ -165,7 +165,7 @@ public class DemoApplication {
   }
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   @ResponseBody
-    public String get(@PathVariable("id") String id) {
+    public Datum get(@PathVariable("id") Datum id) {
         //datumToFile(datum);
         //rawToFile(datum.raw);
         //runpy();
