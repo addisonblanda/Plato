@@ -1,8 +1,16 @@
 package com.example;
 
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class FileController {
 
-    private static String csvToFile(String csv) {
+    public String csvToFile(String csv) {
         List<String> arrayList = Arrays.asList(csv.split(","));
 
         rawToFile(arrayList.get(0));
@@ -55,7 +63,7 @@ public class FileController {
         return "";
     }
 
-    private static String fileToCsv(String raw) {
+    public String fileToCsv(String raw) {
         File[] directories = new File("data/").listFiles(new FileFilter() {
             @Override
             public boolean accept(File file) {
@@ -89,14 +97,14 @@ public class FileController {
         return sb.toString().substring(0, sb.toString().length()-1);
     }
 
-  private static String readFile(String path, Charset encoding)
+  public String readFile(String path, Charset encoding)
             throws IOException
     {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
   }
 
-  private static void rawToFile(String raw) {
+  public void rawToFile(String raw) {
         try {
             PrintWriter writer = new PrintWriter("input.txt", "UTF-8");
             writer.println(raw);
@@ -106,7 +114,7 @@ public class FileController {
         }
   }
 	
-  private static boolean deleteDirectory(File directory) {
+  public boolean deleteDirectory(File directory) {
         if(directory.exists()){
             File[] files = directory.listFiles();
             if(null!=files){
