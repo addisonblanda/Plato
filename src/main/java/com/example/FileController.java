@@ -69,16 +69,6 @@ public class FileController {
             }
         });
 	    
-	StringBuilder sb = new StringBuilder();
-	    
-        if( directories != null ) {
-		for (File d : directories) {
-			sb.append(d.toString());
-		}
-		return sb.toString();
-	}
-	return "Some kind of failure.";
-	/*
         List<String> names = new ArrayList<String>();
         List<String> data = new ArrayList<String>();
 
