@@ -48,7 +48,7 @@ public class DemoApplication {
 	  //fc.deleteDirectory(new File("data"));
 	  //response = response.replaceAll(" ", "");
 	  id = id.replace("/", "Q");
-	  return id;
+	  return response;
   }
 
   public static void main(String[] args) {
