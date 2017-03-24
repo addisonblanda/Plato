@@ -20,6 +20,9 @@ public class DemoApplication {
 
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));
+		
+	    BufferedReader stdError = new BufferedReader(new 
+     		    InputStreamReader(proc.getErrorStream()));
 
             // read the output from the command
             String s;
@@ -27,6 +30,9 @@ public class DemoApplication {
             while ((s = stdInput.readLine()) != null) {
                 sb.append(s);
             }
+	    while ((s = stdError.readLine()) != null) {
+		sb.append(s);
+	    }
             return sb.toString();
         }
         catch (IOException e) {
