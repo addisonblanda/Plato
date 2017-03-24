@@ -46,7 +46,7 @@ public class DemoApplication {
 	  String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
 	  response = response.replaceAll(" ", "");
-	  return raw;
+	  return response;
   }
 
   public static void main(String[] args) {
