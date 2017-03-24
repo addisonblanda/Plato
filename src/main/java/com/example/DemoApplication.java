@@ -22,7 +22,7 @@ public class DemoApplication {
                     InputStreamReader(p.getInputStream()));
 		
 	    BufferedReader stdError = new BufferedReader(new 
-     		    InputStreamReader(proc.getErrorStream()));
+     		    InputStreamReader(p.getErrorStream()));
 
             // read the output from the command
             String s;
