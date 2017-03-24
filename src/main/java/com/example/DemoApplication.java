@@ -39,7 +39,7 @@ public class DemoApplication {
   @ResponseBody
   public String get(@PathVariable("id") String id) {
 	  id = id.replaceAll("%20", " ");
-	  id = id.replaceAll("?", "/");
+	  id = id.replaceAll("%3F", "/");
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
 	  //runpy();
