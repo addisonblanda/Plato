@@ -13,15 +13,26 @@ import java.io.*;
 @SpringBootApplication
 public class DemoApplication {
   
-  private static void runpy() {
+    private static String runpy() {
         try {
-	    // execute python
-            Process p = Runtime.getRuntime().exec("python information.py");
-	}   
-        catch (IOException e) {
-            e.printStackTrace();
+            //
+            Process p = Runtime.getRuntime().exec("python information.py ");
+
+            BufferedReader stdInput = new BufferedReader(new
+                    InputStreamReader(p.getInputStream()));
+
+            // read the output from the command
+            String s;
+            StringBuilder sb = new StringBuilder();
+            while ((s = stdInput.readLine()) != null) {
+                sb.append(s);
+            }
+            return sb.toString();
         }
-  }
+        catch (IOException e) {
+            return "Python exception...";
+        }
+    }
 
   @RequestMapping("/")
   @ResponseBody
@@ -44,10 +55,10 @@ public class DemoApplication {
 	  id = id.replace("?", "/");
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
-	  runpy();
+	  String rp = runpy();
 	  String response = fc.fileToCsv(raw);
 	  //id = id.replace("/", "Q");
-	  return response;
+	  return rp;
   }
 
   public static void main(String[] args) {
