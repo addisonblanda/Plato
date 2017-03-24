@@ -42,7 +42,8 @@ def file_opener(file_name):
         f.close
         return s
     except:
-        sys.exit("No such file exists!")
+        print("No such file exists!")
+        sys.exit()
 
 
 # ----------------------------------
