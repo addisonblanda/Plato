@@ -22,7 +22,6 @@ public class FileController {
         int index;
 
         try{
-	    StringBuilder sb = new StringBuilder();
             for(int i = 1; i < arrayList.size(); i++) {
                 index = arrayList.get(i).indexOf('~');
                 if(index != arrayList.get(i).length()-1) {
@@ -35,12 +34,9 @@ public class FileController {
                     bw.write(data);
                     bw.close();
                     fw.close();
-		    if (f.exists()) {
-			sb.append(f.getAbsolutePath() + " ");
-		    }
                 }
             }
-            return sb.toString();
+            return arrayList.get(0);
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -90,7 +86,7 @@ public class FileController {
             }
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(raw + ",");
+        sb.append(raw + "OK,");
 
         for(int i = 0; i < names.size(); i++) {
             sb.append(names.get(i) + "~" + data.get(i) + ",");
