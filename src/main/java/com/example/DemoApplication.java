@@ -45,8 +45,8 @@ public class DemoApplication {
 	  //runpy();
 	  String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
-	  response = response.replaceAll(" ", "");
-	  return System.getProperty("user.dir");
+	  //response = response.replaceAll(" ", "");
+	  return response;
   }
 
   public static void main(String[] args) {
