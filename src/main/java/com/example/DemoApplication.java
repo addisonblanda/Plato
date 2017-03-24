@@ -43,10 +43,10 @@ public class DemoApplication {
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
 	  //runpy();
-	  //String response = fc.fileToCsv(raw);
+	  String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
-	  raw = raw.replaceAll(" ", "");
-	  return raw;
+	  response = response.replaceAll(" ", "");
+	  return response;
   }
 
   public static void main(String[] args) {
