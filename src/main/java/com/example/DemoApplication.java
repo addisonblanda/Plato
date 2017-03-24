@@ -47,6 +47,7 @@ public class DemoApplication {
 	  String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
 	  //response = response.replaceAll(" ", "");
+	  id.replacedAll("/", "Q");
 	  return id;
   }
 
