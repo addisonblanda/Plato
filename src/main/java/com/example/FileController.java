@@ -92,7 +92,6 @@ public class FileController {
             sb.append(names.get(i) + "~" + data.get(i) + ",");
         }
         return sb.toString().substring(0, sb.toString().length()-1);
-	*/
     }
 
   public String readFile(String path, Charset encoding)
