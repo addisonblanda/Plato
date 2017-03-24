@@ -62,14 +62,23 @@ public class FileController {
     }
 
     public String fileToCsv(String raw) {
-        File[] directories = new File("data/").listFiles(new FileFilter() {
+        File[] directories = new File("/").listFiles(new FileFilter() {
             @Override
             public boolean accept(File file) {
                 return file.isDirectory();
             }
         });
-        assert directories != null;
-
+	    
+	StringBuilder sb = new StringBuilder();
+	    
+        if( directories != null ) {
+		for (File d : directories) {
+			sb.append(d.toString());
+		}
+		return sb.toString();
+	}
+	return "Some kind of failure.";
+	/*
         List<String> names = new ArrayList<String>();
         List<String> data = new ArrayList<String>();
 
@@ -93,6 +102,7 @@ public class FileController {
             sb.append(names.get(i) + "~" + data.get(i) + ",");
         }
         return sb.toString().substring(0, sb.toString().length()-1);
+	*/
     }
 
   public String readFile(String path, Charset encoding)
