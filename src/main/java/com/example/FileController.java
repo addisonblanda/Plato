@@ -22,6 +22,7 @@ public class FileController {
         int index;
 
         try{
+	    StringBuilder sb = new StringBuilder();
             for(int i = 1; i < arrayList.size(); i++) {
                 index = arrayList.get(i).indexOf('~');
                 if(index != arrayList.get(i).length()-1) {
@@ -34,9 +35,12 @@ public class FileController {
                     bw.write(data);
                     bw.close();
                     fw.close();
+		    if (f.exists()) {
+			sb.append(f.getAbsolutePath() + " ");
+		    }
                 }
             }
-            return arrayList.get(0);
+            return sb.toString();
         } catch (IOException e) {
 
             e.printStackTrace();
