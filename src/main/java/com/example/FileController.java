@@ -28,7 +28,7 @@ public class FileController {
                     name = arrayList.get(i).substring(0, index);
                     data = arrayList.get(i).substring(index+1, arrayList.get(i).length());
                     File f = new File(name);
-                    f.getParentFile().mkdirs();
+                    //f.getParentFile().mkdirs();
                     fw = new FileWriter(f);
                     bw = new BufferedWriter(fw);
                     bw.write(data);
