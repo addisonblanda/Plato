@@ -40,14 +40,14 @@ public class DemoApplication {
   public String get(@PathVariable("id") String id) {
 	  id = id.replaceAll("%20", " ");
 	  id = id.replaceAll("%3F", "/");
-	  id = id.replaceAll("?", "/");
+	  id = id.replace("?", "/");
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
 	  //runpy();
 	  String response = fc.fileToCsv(raw);
 	  //fc.deleteDirectory(new File("data"));
 	  //response = response.replaceAll(" ", "");
-	  id = id.replaceAll("/", "Q");
+	  id = id.replace("/", "Q");
 	  return id;
   }
 
