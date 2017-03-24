@@ -62,7 +62,7 @@ public class FileController {
     }
 
     public String fileToCsv(String raw) {
-        File[] directories = new File("/tmp/").listFiles(new FileFilter() {
+        File[] directories = new File("/tmp/tomcat.6330586120275744469.52117/").listFiles(new FileFilter() {
             @Override
             public boolean accept(File file) {
                 return file.isDirectory();
