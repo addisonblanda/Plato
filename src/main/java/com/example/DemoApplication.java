@@ -43,11 +43,9 @@ public class DemoApplication {
 	  id = id.replace("?", "/");
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
-	  //runpy();
+	  runpy();
 	  String response = fc.fileToCsv(raw);
-	  //fc.deleteDirectory(new File("data"));
-	  //response = response.replaceAll(" ", "");
-	  id = id.replace("/", "Q");
+	  //id = id.replace("/", "Q");
 	  return response;
   }
 
