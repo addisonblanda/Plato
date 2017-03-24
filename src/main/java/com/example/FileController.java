@@ -86,7 +86,7 @@ public class FileController {
             }
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(raw + "OK,");
+        sb.append(raw + ",");
 
         for(int i = 0; i < names.size(); i++) {
             sb.append(names.get(i) + "~" + data.get(i) + ",");
