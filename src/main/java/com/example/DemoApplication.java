@@ -16,7 +16,7 @@ public class DemoApplication {
     private static String runpy() {
         try {
             //
-            Process p = Runtime.getRuntime().exec("python information.py ");
+            Process p = Runtime.getRuntime().exec("python hello.py ");
 
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));
