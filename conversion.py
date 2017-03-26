@@ -2,7 +2,7 @@ import nltk
 import os
 import string
 import threading
-from queue import Queue
+from Queue import Queue
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.parse.stanford import StanfordDependencyParser
 from rt import RelationTree
