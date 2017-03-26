@@ -34,7 +34,7 @@ def read_file(fn, pos, size):
 def create_file(fn, tree):
     with open(fn, 'ab+') as f:
         f.seek(SEEK_NAME, 1)
-        f.write(str.encode(tree.name))
+        f.write(str.encode(str(tree.name)))
         f.seek(SEEK_ID, 1)
         f.write(str.encode(str(tree.id)))
         f.seek(SEEK_PID, 1)
@@ -42,7 +42,7 @@ def create_file(fn, tree):
         f.seek(SEEK_NUM, 1)
         f.write(str.encode(str(tree.num)))
         f.seek(SEEK_TAG, 1)
-        f.write(str.encode(tree.tag))
+        f.write(str.encode(str(tree.tag)))
         f.write(str.encode('\n'))
 
 
