@@ -62,17 +62,11 @@ s = file_opener(file)
 sd = nltk.data.load('tokenizers/punkt/english.pickle')
 sentences = sd.tokenize(s)
 
-additions = 0
 count = 0
 size = len(sentences)
 
-ts = time.time()
-st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-
 for sentence in sentences:
     if len(sentence) < LEN:
-        additions += conversion.dep_to_file(sentence)
-
-print("done.")
+        conversion.dep_to_file(sentence)
 
 
