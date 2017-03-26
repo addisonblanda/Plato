@@ -111,7 +111,7 @@ public class FileController {
         }
   }
 	
-  public boolean deleteDirectory(File directory) {
+  public void deleteDirectory(File directory) {
         if(directory.exists()){
             File[] files = directory.listFiles();
             if(null!=files){
@@ -125,6 +125,6 @@ public class FileController {
                 }
             }
         }
-        return(directory.delete());
+        //return(directory.delete());
   }
 }
