@@ -67,8 +67,8 @@ def incrementRoot(fn):
 # --------------------------
 # --- Parse tree to file ---
 # --------------------------
-def tree_parser(lock, tree, fn):
-    with lock:
+def tree_parser(tree, fn):
+    #with lock:
         cwd = os.getcwd()
 
         path = tree.path
