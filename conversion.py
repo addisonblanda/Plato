@@ -2,7 +2,7 @@ import nltk
 import os
 import string
 import threading
-from queue import Queue
+from queue import queue
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.parse.stanford import StanfordDependencyParser
 from rt import RelationTree
@@ -31,7 +31,7 @@ SEEK_PID = 38
 SEEK_NUM = 44
 
 lock = threading.Lock()
-q = Queue()
+q = queue()
 
 #
 # ~~SETUP CORENLP LIBRARY~~
