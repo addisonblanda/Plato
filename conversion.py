@@ -1,8 +1,8 @@
 import nltk
 import os
 import string
-import threading
-from Queue import Queue
+#import threading
+#from Queue import Queue
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.parse.stanford import StanfordDependencyParser
 from rt import RelationTree
@@ -30,8 +30,8 @@ SEEK_ID = 32
 SEEK_PID = 38
 SEEK_NUM = 44
 
-lock = threading.Lock()
-q = Queue()
+#lock = threading.Lock()
+#q = Queue()
 
 #
 # ~~SETUP CORENLP LIBRARY~~
@@ -78,12 +78,12 @@ def vs(words):
 # -----------------------
 # --- Handles threads ---
 # -----------------------
-def tree_worker():
-    while True:
-        item = q.get()
-        if item:
-            tree_parser(lock, item[0], item[1])
-        q.task_done()
+#def tree_worker():
+#    while True:
+#        item = q.get()
+#        if item:
+#            tree_parser(lock, item[0], item[1])
+#        q.task_done()
 
 
 # -------------------------
@@ -193,14 +193,9 @@ def create_mod_tree(directModifiers, mod):
         modTree.append([mt, fn])
         id[subj] += 1
 
-    t = threading.Thread(target=tree_worker)
-    t.daemon = True
-    t.start()
-
     if modTree:
         for tree in modTree:
-            q.put([tree[0], tree[1]])
-    q.join()
+            tree_parser(tree[0], tree[1])
 
 # ----------------------
 # ---  Create tree  ---
@@ -274,12 +269,6 @@ def create_obj_tree(objectiveRelations):
             subjID += 1
             subjParent += 1
 
-    t = threading.Thread(target=tree_worker)
-    t.daemon = True
-    t.start()
-
     if objTree is not None:
-        q.put([objTree, f_name])
         for leaf in objTree.leaf:
-            q.put([leaf, f_name])
-        q.join()
+            tree_parser(leaf, f_name)
