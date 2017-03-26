@@ -31,7 +31,7 @@ SEEK_PID = 38
 SEEK_NUM = 44
 
 lock = threading.Lock()
-q = queue()
+q = Queue()
 
 #
 # ~~SETUP CORENLP LIBRARY~~
