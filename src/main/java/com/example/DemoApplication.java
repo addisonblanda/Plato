@@ -63,7 +63,7 @@ public class DemoApplication {
 	  String raw = fc.csvToFile(id);
 	  runpy();
 	  String response = fc.fileToCsv(raw);
-	  //fc.deleteDirectory(new File("data"));
+	  fc.deleteDirectory(new File("data"));
 	  return response;
   }
 
