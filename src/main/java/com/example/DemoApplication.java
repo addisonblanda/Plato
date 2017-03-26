@@ -61,10 +61,10 @@ public class DemoApplication {
 	  id = id.replace("?", "/");
 	  FileController fc = new FileController();
 	  String raw = fc.csvToFile(id);
-	  String rp = runpy();
+	  runpy();
 	  String response = fc.fileToCsv(raw);
 	  //id = id.replace("/", "Q");
-	  return rp;
+	  return response;
   }
 
   public static void main(String[] args) {
