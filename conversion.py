@@ -270,5 +270,6 @@ def create_obj_tree(objectiveRelations):
             subjParent += 1
 
     if objTree is not None:
+        tree_parser(objTree, f_name)
         for leaf in objTree.leaf:
             tree_parser(leaf, f_name)
