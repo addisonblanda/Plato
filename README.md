@@ -1,15 +1,8 @@
-# Spring Boot Android Demo
+# Plato
 
-This is a demo application intended for use with my blog post on [Creating Backend APIs for Android Apps with Heroku and Retrofit](http://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html).
+Backend API for Maria
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This was originally forked from: (http://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html).
+Thank you!
 
-Or follow these steps, after installing the [Heroku Toolbelt](https://toolbelt.heroku.com/), to deploy from the CLI:
 
-```sh-session
-$ git clone https://github.com/kissaten/spring-boot-android-service
-$ cd spring-boot-android-service
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
